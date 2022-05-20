@@ -24,7 +24,7 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|min:6|max:80',
+            'name' => 'required|string|min:4|max:80',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|'
         ];
@@ -35,13 +35,13 @@ class StoreUserRequest extends FormRequest
         return [
             'name.required' => 'O campo nome é obrigatório.',
             'name.string' => 'O campo nome deve ser uma cadeia de caracteres.',
-            'name.min' => 'O campo nome deve ter pelo menos 6 caracteres.',
+            'name.min' => 'O campo nome deve ter pelo menos 4 caracteres.',
             'name.max' => 'O campo nome deve ter no máximo 80 caracteres.',
-            'email.required' => 'O e-mail preço é obrigatório.',
-            'email.email' => 'O campo deve ter o formato de e-mail.',
+            'email.required' => 'O campo e-mail é obrigatório.',
+            'email.email' => 'O campo e-mail é inválido.',
             'email.unique' => 'Este e-mail já existe.',
             'password.required' => 'O campo senha é obrigatório.',
-            'password.min' => 'O campo senha deve ter pelo menos 6 caracteres.',
+            'password.min' => 'O campo senha deve ter pelo menos 8 caracteres.',
         ];
     }
 }
