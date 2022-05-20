@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API\Game;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreGameRequest;
+use App\Http\Requests\Game\StoreGameRequest;
 use App\Models\Game;
 use App\Models\User;
 use Exception;

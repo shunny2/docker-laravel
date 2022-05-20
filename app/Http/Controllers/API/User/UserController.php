@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\API\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\User\AuthenticateUserRequest;
+use App\Http\Requests\User\StoreUserRequest;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -50,6 +52,29 @@ class UserController extends Controller
             $this->user->create($data);
 
             return response('Successfully registered!', '200');
+        } catch (Exception $e) {
+            return response($e->getMessage(), $e->getCode());
+        }
+    }
+
+    /**
+     *Validates if the user is registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function authenticate(AuthenticateUserRequest $request)
+    {
+        try {
+            $data = $request->all();
+            $user = $this->user
+                ->where('email', $data['email'])
+                ->first();
+
+            if(!$user || !Hash::check($data['password'], $user->password))
+                return response()->json(['E-mail ou senha de usuário não encontrado.','Informe um e-mail ou senha válido.'], 404, []);
+
+            return response()->json($user);
         } catch (Exception $e) {
             return response($e->getMessage(), $e->getCode());
         }
