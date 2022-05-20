@@ -26,7 +26,7 @@ class StoreUserRequest extends FormRequest
         return [
             'name' => 'required|string|min:4|max:80',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:8|'
+            'password' => 'required|confirmed|string|min:8|'
         ];
     }
 
@@ -41,6 +41,7 @@ class StoreUserRequest extends FormRequest
             'email.email' => 'O campo e-mail é inválido.',
             'email.unique' => 'Este e-mail já existe.',
             'password.required' => 'O campo senha é obrigatório.',
+            'password.confirmed' => 'Os campos de senha e confirme senha devem ser iguais.',
             'password.min' => 'O campo senha deve ter pelo menos 8 caracteres.',
         ];
     }
