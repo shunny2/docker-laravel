@@ -15,6 +15,7 @@ class GameController extends Controller
 
     public function __construct(Game $game)
     {
+        $this->middleware('auth:api');
         $this->game = $game;
     }
 
