@@ -1,0 +1,675 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Scrim API",
+        "description": "This is an API for application Scrim.",
+        "contact": {
+            "name": "API Support",
+            "email": "alexander.davis.098@gmail.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://github.com/shunny2/scrim-backend/blob/master/LICENSE.md"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/game": {
+            "get": {
+                "tags": [
+                    "Games"
+                ],
+                "summary": "Listing all games",
+                "description": "This route is responsible for listing the games.",
+                "operationId": "5de682efac4ee474bc4b8a34bf94610d",
+                "responses": {
+                    "200": {
+                        "description": "Ok: Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Game"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Client Error: Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Games"
+                ],
+                "summary": "Store new game",
+                "description": "This route is responsible for storing a new game.",
+                "operationId": "ed2e2ec2631e0250fb413a42d03cbde0",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "cost": {
+                                        "type": "number"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "examples": {
+                                "GameExample": {
+                                    "summary": "Game",
+                                    "value": {
+                                        "name": "Perfect World",
+                                        "cost": 0,
+                                        "description": "Perfect World is a 3D fantasy adventure MMORPG with traditional Chinese settings."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created: New game created"
+                    },
+                    "400": {
+                        "description": "Client Error: Bad Request"
+                    },
+                    "401": {
+                        "description": "Client Error: Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/game/{id}": {
+            "get": {
+                "tags": [
+                    "Games"
+                ],
+                "summary": "Search for a game by ID",
+                "description": "This route is responsible for searching a game by ID.",
+                "operationId": "6353ba232978cb14fc37020d8c778fd1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of game that needs to be fetched",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "maximum": 10000000,
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok: Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Game"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Client Error: Unauthorized"
+                    },
+                    "404": {
+                        "description": "Client Error: Not found"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Games"
+                ],
+                "summary": "Update a game",
+                "description": "This route is responsible for updating a specific game in storage.",
+                "operationId": "c9039ce63e004f93625c7a3233e5260e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of game that needs to be fetched",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "maximum": 10000000,
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "cost": {
+                                        "type": "number"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "examples": {
+                                "GameExample": {
+                                    "summary": "Game",
+                                    "value": {
+                                        "name": "Perfect World Updated",
+                                        "cost": 20,
+                                        "description": "Perfect World Description Updated"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok: Successful Operation"
+                    },
+                    "401": {
+                        "description": "Client Error: Unauthorized"
+                    },
+                    "404": {
+                        "description": "Client Error: Not found"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Games"
+                ],
+                "summary": "Delete a game",
+                "description": "This route is responsible for deleting a specific game.",
+                "operationId": "69029351eccd80667e02aebfeb0f0297",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of game that needs to be fetched",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "maximum": 10000000,
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Ok: Successful Operation"
+                    },
+                    "401": {
+                        "description": "Client Error: Unauthorized"
+                    },
+                    "404": {
+                        "description": "Client Error: Not found"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/game/{id}/edit": {
+            "get": {
+                "tags": [
+                    "Games"
+                ],
+                "summary": "Get a game by ID",
+                "description": "Get a game by ID to update the game.",
+                "operationId": "ddaea47a708faccc1e2187c103b962fa",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of game that needs to be fetched",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "maximum": 10000000,
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok: Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Game"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Client Error: Unauthorized"
+                    },
+                    "404": {
+                        "description": "Client Error: Not found"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "User Sign in",
+                "description": "This route is responsible for performing user input in the application.",
+                "operationId": "da2ca4d7a5cdec77b8b45a20373535cb",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "examples": {
+                                "UserExample": {
+                                    "summary": "User",
+                                    "value": {
+                                        "email": "johndoe@gmail.com",
+                                        "password": "12345678"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok: Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "examples": {
+                                    "UserLoginExample": {
+                                        "summary": "User",
+                                        "value": {
+                                            "status": "string",
+                                            "user": {
+                                                "id": "integer",
+                                                "name": "string",
+                                                "email": "string",
+                                                "email_verified_at": "null",
+                                                "created_at": "date-time",
+                                                "updated_at": "date-time"
+                                            },
+                                            "authorisation": {
+                                                "token": "string",
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Client Error: Bad Request"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/register": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Store new user",
+                "description": "This route is responsible for storing a new user.",
+                "operationId": "6796c44e1f6079c411abbfed066c5907",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "confirmPassword": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "examples": {
+                                "UserExample": {
+                                    "summary": "User",
+                                    "value": {
+                                        "name": "John Doe",
+                                        "email": "johndoe@gmail.com",
+                                        "password": "12345678",
+                                        "confirmPassword": "12345678"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created: New user created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "examples": {
+                                    "UserLoginExample": {
+                                        "summary": "User",
+                                        "value": {
+                                            "status": "string",
+                                            "message": "string",
+                                            "user": {
+                                                "name": "string",
+                                                "email": "string",
+                                                "email_verified_at": "null",
+                                                "created_at": "date-time",
+                                                "updated_at": "date-time",
+                                                "id": "integer"
+                                            },
+                                            "authorisation": {
+                                                "token": "null",
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Client Error: Bad Request"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/logout": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Sign out a user",
+                "description": "This route is responsible for performing the user exit from the application.",
+                "operationId": "c4eddaf1a2e990cc90e4326c0d731d41",
+                "responses": {
+                    "204": {
+                        "description": "Ok: Successful Operation"
+                    },
+                    "401": {
+                        "description": "Client Error: Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/me": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Verify Token",
+                "description": "This route is responsible for verifying that the user's token is valid.",
+                "operationId": "ae2f8c1ae1f9c5aee99c01f5d13da30b",
+                "responses": {
+                    "200": {
+                        "description": "Ok: Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "examples": {
+                                    "UserLoginExample": {
+                                        "summary": "User",
+                                        "value": {
+                                            "status": "string",
+                                            "user": {
+                                                "id": "integer",
+                                                "name": "string",
+                                                "email": "string",
+                                                "email_verified_at": "null",
+                                                "created_at": "date-time",
+                                                "updated_at": "date-time"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Client Error: Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/refresh": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Refresh Token",
+                "description": "This route is responsible for updating or invalidating the user's token.",
+                "operationId": "48bc0aaee4ed3ed89ef12f9065e2df85",
+                "responses": {
+                    "200": {
+                        "description": "Ok: Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "examples": {
+                                    "UserLoginExample": {
+                                        "summary": "User",
+                                        "value": {
+                                            "status": "string",
+                                            "user": {
+                                                "id": "integer",
+                                                "name": "string",
+                                                "email": "string",
+                                                "email_verified_at": "null",
+                                                "created_at": "date-time",
+                                                "updated_at": "date-time"
+                                            },
+                                            "authorisation": {
+                                                "token": "string",
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Client Error: Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server Error: Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Game": {
+                "title": "Game",
+                "description": "Game model",
+                "properties": {
+                    "_id": {
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "cost": {
+                        "type": "number"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "format": "date-time"
+                    }
+                },
+                "type": "object"
+            },
+            "User": {
+                "title": "User",
+                "description": "User model",
+                "properties": {
+                    "_id": {
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "email_verified_at": {
+                        "format": "date-time"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "format": "date-time"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    }
+}
