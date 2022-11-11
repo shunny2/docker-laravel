@@ -16,9 +16,11 @@
 
 [Scrim is a web application](https://github.com/shunny2/scrim-frontend) for registering and listing games. The application makes requests to the backend via API to perform its functions.
 
-For the development of Scrim, the most modern libraries that react can offer were used.
+For the development of Scrim, the most modern libraries that [React](https://reactjs.org/) and [Laravel](https://laravel.com/) can offer were used.
 
-API Documentation is available at: [/api/v1/docs](https://localhost:8000/api/v1/docs)
+The [scrim-backend](https://github.com/shunny2/scrim-backend/) uses JSON Web Token authentication to validate its users.
+
+API Documentation is available at: [/api/v1/docs](https://scrim-games.herokuapp.com/api/v1/docs)
 
 ## Technologies
 
@@ -65,6 +67,10 @@ And finally, access the project URL:
 [Welcome](https://localhost:8000)
 
 ## Routes
+
+The image below describes the routes available by the application.
+
+![routes](https://user-images.githubusercontent.com/72872854/201341324-8e6adcc7-f6ee-48ad-8412-b021fc38173a.png)
 
 ## Project Status
 
