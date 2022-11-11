@@ -8,14 +8,32 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
+/**
+ * Class User.
+ *
+ * @author Alexander Davis <alexander.davis.098@gmail.com>
+ *
+ * @OA\Schema(
+ *  title="User",
+ *  description="User model"
+ * )
+ */
 class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
 
     /**
+     * @OA\Property(format="int64", property="_id")
+     * @OA\Property(property="name",type="string")
+     * @OA\Property(property="email",type="string")
+     * @OA\Property(format="date-time", property="email_verified_at")
+     * @OA\Property(property="password",type="string")
+     * @OA\Property(format="date-time", property="created_at")
+     * @OA\Property(format="date-time", property="updated_at")
+     *
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @return array
      */
     protected $fillable = [
         'name',
