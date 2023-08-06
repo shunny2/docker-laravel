@@ -1,3 +1,15 @@
+<p align="center">
+  <a href="#about-scrim">About Scrim</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#technologies">Technologies</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#how-to-run">How to Run</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#project-status">Project Status</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#license">License</a>
+</p>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -14,9 +26,9 @@
 
 ## About Scrim
 
-[Scrim is a web application](https://github.com/shunny2/scrim-frontend) for registering and listing games. The application makes requests to the backend via API to perform its functions.
+<b>Backend</b> application of the [Scrim](https://github.com/shunny2/scrim-frontend) project made in PHP with the Laravel framework.
 
-For the development of Scrim, the most modern libraries that [React](https://reactjs.org/) and [Laravel](https://laravel.com/) can offer were used.
+For the development of <b>Scrim</b>, the most modern libraries that [React](https://reactjs.org/) and [Laravel](https://laravel.com/) can offer were used.
 
 The [scrim-backend](https://github.com/shunny2/scrim-backend/) uses JSON Web Token authentication to validate its users.
 
@@ -29,19 +41,22 @@ API Documentation is available at: [/api/v1/docs](https://scrim-games.herokuapp.
   </thead>
   <tbody>
     <td>
-      <a href="https://www.php.net/"><img width="128" height="128" src="https://www.php.net/images/logos/new-php-logo.svg" alt="PHP logo image." /></a>
+      <a href="https://www.php.net/" title="PHP"><img width="128" height="128" src="https://www.php.net/images/logos/new-php-logo.svg" alt="PHP logo image." /></a>
     </td>
     <td>
-      <a href="https://laravel.com/"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg" alt="Laravel logo image." /></a>
+      <a href="https://laravel.com/" title="Laravel"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg" alt="Laravel logo image." /></a>
     </td>
     <td>
-      <a href="https://www.postgresql.org/"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/postgresql.svg" alt="PostgreSQL logo image." />         </a>
+      <a href="https://www.postgresql.org/" title="Postgres"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/postgresql.svg" alt="PostgreSQL logo image." /></a>
     </td>
     <td>
-      <a href="https://swagger.io/"><img width="128" height="128" src="https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg" alt="Swagger logo image." /></a>
+      <a href="https://swagger.io/" title="Swagger Documentation"><img width="128" height="128" src="https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg" alt="Swagger logo image." /></a>
     </td>
     <td>
-      <a href="https://www.heroku.com/"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/heroku-1.svg" alt="Heroku logo image." /></a>
+      <a href="https://www.heroku.com/" title="Heroku"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/heroku-1.svg" alt="Heroku logo image." /></a>
+    </td>
+    <td>
+      <a href="https://www.docker.com/" title="Docker"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/docker.svg" alt="Docker logo image." /></a>
     </td>
   </tbody>
 </table>
@@ -75,6 +90,10 @@ The image below describes the routes available by the application.
 ## Project Status
 
 > Status: Developing.
+
+## License
+
+This project is under an [MIT](https://opensource.org/licenses/MIT) license.
 
 <hr/>
 
