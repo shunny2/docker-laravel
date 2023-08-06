@@ -89,7 +89,7 @@ The image below describes the routes available by the application.
 
 ## Project Status
 
-> Status: Developing.
+> Status: Completed.
 
 ## License
 
