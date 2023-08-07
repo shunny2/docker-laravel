@@ -1,52 +1,20 @@
-FROM php:8.0-fpm
+FROM richarvey/nginx-php-fpm:1.9.1
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y libpq-dev \
-    libfreetype6-dev \
-    libjpeg62-turbo-dev \
-    libpng-dev \
-    libmcrypt-dev \
-    libpq-dev \
-    git \
-    curl \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    libcurl4-openssl-dev \
-    zip \
-    unzip
+COPY . .
 
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+# Image config
+ENV SKIP_COMPOSER 1
+ENV WEBROOT /var/www/html/public
+ENV PHP_ERRORS_STDERR 1
+ENV RUN_SCRIPTS 1
+ENV REAL_IP_HEADER 1
 
-# Install PHP extensions
-RUN docker-php-ext-install pdo pgsql pdo_pgsql mbstring exif pcntl bcmath gd
-
-# Get latest Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
+# Laravel config
 ENV APP_ENV production
 ENV APP_DEBUG false
+ENV LOG_CHANNEL stderr
 
-# Set working directory
-WORKDIR /app
+# Allow composer to run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
 
-COPY . /app
-
-# Install project dependencies
-RUN composer install --optimize-autoloader --no-dev
-
-# Optimizing Configuration loading
-RUN php artisan config:cache
-# Optimizing Route loading
-RUN php artisan route:cache
-# Optimizing View loading
-RUN php artisan view:cache
-
-# Running migrations
-RUN php artisan migrate --force
-
-# Run the server
-CMD php artisan serve --host=0.0.0.0 --port $PORT
-
-EXPOSE $PORT
+CMD ["/start.sh"]
