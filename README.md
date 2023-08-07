@@ -34,7 +34,7 @@ For the development of <b>Scrim</b>, the most modern libraries that [React](http
 
 The [scrim-backend](https://github.com/shunny2/scrim-backend/) uses JSON Web Token authentication to validate its users.
 
-API Documentation is available at: [/api/v1/docs](https://scrim-games.herokuapp.com/api/v1/docs)
+API Documentation is available at: [/api/v1/docs](https://scrim-games-api.onrender.com/api/v1/docs)
 
 ## Technologies
 
