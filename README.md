@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="#about-scrim">About Scrim</a>
+  <a href="#about-scrim-games">About Scrim Games</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies">Technologies</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -15,18 +15,12 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://img.shields.io/github/license/shunny2/scrim-backend"><img src="https://img.shields.io/github/license/shunny2/scrim-backend" alt="License"></a>
+<a href="https://img.shields.io/github/stars/shunny2/scrim-games-api?style=social"><img src="https://img.shields.io/github/stars/shunny2/scrim-games-api?style=social" alt="Stars"></a>
+<a href="https://img.shields.io/github/forks/shunny2/scrim-games-api?style=social"><img src="https://img.shields.io/github/forks/shunny2/scrim-games-api?style=social" alt="Forks"></a>
+<a href="https://img.shields.io/github/license/shunny2/scrim-games-api?style=social"><img src="https://img.shields.io/github/license/shunny2/scrim-games-api?style=social" alt="License"></a>
 </p>
 
-<p align="center">
-<a href="https://img.shields.io/github/stars/shunny2/scrim-backend?style=social"><img src="https://img.shields.io/github/stars/shunny2/scrim-backend?style=social" alt="Stars"></a>
-<a href="https://img.shields.io/github/forks/shunny2/scrim-backend?style=social"><img src="https://img.shields.io/github/forks/shunny2/scrim-backend?style=social" alt="Forks"></a>
-</p>
-
-## About Scrim
+## About Scrim Games
 
 <b>Backend</b> application of the [Scrim Games](https://github.com/shunny2/scrim-games) project made in PHP with the Laravel framework.
 
