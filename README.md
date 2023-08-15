@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="#about-scrim-games">About Scrim Games</a>
+  <a href="#about-application">About Application</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies">Technologies</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -20,7 +20,7 @@
 <a href="https://img.shields.io/github/license/shunny2/scrim-games-api?style=social"><img src="https://img.shields.io/github/license/shunny2/scrim-games-api?style=social" alt="License"></a>
 </p>
 
-## About Scrim Games
+## About Application
 
 <b>Backend</b> application of the [Scrim Games](https://github.com/shunny2/scrim-games) project made in PHP with the Laravel framework.
 
@@ -61,7 +61,7 @@ API Documentation is available at: [/api/v1/docs](https://scrim-games-api.onrend
 
 First, start by cloning the repository:
 ```shell
-git clone https://github.com/shunny2/scrim-backend
+git clone https://github.com/shunny2/scrim-games-api
 ```
 
 If you use docker, run the following command from the project root directory to build and run the project.
