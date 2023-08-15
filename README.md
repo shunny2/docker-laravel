@@ -28,9 +28,9 @@
 
 ## About Scrim
 
-<b>Backend</b> application of the [Scrim](https://github.com/shunny2/scrim-frontend) project made in PHP with the Laravel framework.
+<b>Backend</b> application of the [Scrim Games](https://github.com/shunny2/scrim-frontend) project made in PHP with the Laravel framework.
 
-For the development of <b>Scrim</b>, the most modern libraries that [React](https://reactjs.org/) and [Laravel](https://laravel.com/) can offer were used.
+For the development of <b>Scrim Games</b>, the most modern libraries that [React](https://reactjs.org/) and [Laravel](https://laravel.com/) can offer were used.
 
 The [scrim-backend](https://github.com/shunny2/scrim-backend/) uses JSON Web Token authentication to validate its users.
 
