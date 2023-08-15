@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "scrim-games-api/laravel",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Backend application of the Scrim Games project made in PHP with the Laravel framework.",
+    "keywords": ["framework", "laravel", "jwt"],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
