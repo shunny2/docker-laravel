@@ -1,23 +1,23 @@
 <p align="center">
-  <a href="#about-application">About Application</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#technologies">Technologies</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#how-to-run">How to Run</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#routes">Routes</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#project-status">Project Status</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#license">License</a>
+    <a href="#about-application">About Application</a>
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#technologies">Technologies</a>
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#how-to-run">How to Run</a>
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#routes">Routes</a>
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#project-status">Project Status</a>
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#license">License</a>
 </p>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
-<a href="https://img.shields.io/github/stars/shunny2/scrim-games-api?style=social"><img src="https://img.shields.io/github/stars/shunny2/scrim-games-api?style=social" alt="Stars"></a>
-<a href="https://img.shields.io/github/forks/shunny2/scrim-games-api?style=social"><img src="https://img.shields.io/github/forks/shunny2/scrim-games-api?style=social" alt="Forks"></a>
-<a href="https://img.shields.io/github/license/shunny2/scrim-games-api?style=social"><img src="https://img.shields.io/github/license/shunny2/scrim-games-api?style=social" alt="License"></a>
+    <a href="https://img.shields.io/github/stars/shunny2/scrim-games-api?style=social"><img src="https://img.shields.io/github/stars/shunny2/scrim-games-api?style=social" alt="Stars"></a>
+    <a href="https://img.shields.io/github/forks/shunny2/scrim-games-api?style=social"><img src="https://img.shields.io/github/forks/shunny2/scrim-games-api?style=social" alt="Forks"></a>
+    <a href="https://img.shields.io/github/license/shunny2/scrim-games-api?style=social"><img src="https://img.shields.io/github/license/shunny2/scrim-games-api?style=social" alt="License"></a>
 </p>
 
 ## About Application
@@ -27,8 +27,6 @@
 For the development of <b>Scrim Games</b>, the most modern libraries that [React](https://reactjs.org/) and [Laravel](https://laravel.com/) can offer were used.
 
 The [scrim-games-api](https://github.com/shunny2/scrim-games-api/) uses JSON Web Token authentication to validate its users.
-
-API Documentation is available at: [/api/v1/docs](https://scrim-games-api.onrender.com/api/v1/docs)
 
 ## Technologies
 
@@ -82,6 +80,8 @@ And finally, access the project URL:
 The image below describes the routes available by the application.
 
 ![routes](https://user-images.githubusercontent.com/72872854/201341324-8e6adcc7-f6ee-48ad-8412-b021fc38173a.png)
+
+API Documentation is available at [/api/v1/docs](https://scrim-games-api.onrender.com/api/v1/docs)
 
 ## Project Status
 
