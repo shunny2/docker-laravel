@@ -22,11 +22,9 @@
 
 ## About Application
 
-<b>Backend</b> application of the [Scrim Games](https://github.com/shunny2/scrim-games) project made in PHP with the Laravel framework.
+The <b>Scrim Games</b> project's backend application is meticulously constructed with [PHP](https://www.php.net/) and the [Laravel](https://laravel.com/) framework. During the development phase of <b>Scrim Games</b>, we harnessed the capabilities of state-of-the-art libraries from both [React](https://reactjs.org/) and [Laravel](https://laravel.com/). This synergy guarantees a contemporary user experience and empowers the platform with resilient functionalities, elevating the engagement and effective management of documented gaming sessions.
 
-For the development of <b>Scrim Games</b>, the most modern libraries that [React](https://reactjs.org/) and [Laravel](https://laravel.com/) can offer were used.
-
-The [scrim-games-api](https://github.com/shunny2/scrim-games-api/) uses JSON Web Token authentication to validate its users.
+Furthermore, the <b>Scrim Games API</b> employs [JSON Web Token](https://jwt.io/) authentication to meticulously validate its users.
 
 ## Technologies
 
